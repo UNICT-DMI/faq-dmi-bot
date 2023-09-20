@@ -2,7 +2,16 @@
 name = "faq-dmi-bot"
 version = "0.1.0"
 edition = "2021"
+license = "AGPL-3.0-or-later" # Probably reduntant but better safe than sorry
+publish = false # Avoid accidentally publishing to crates.io
+repository = "https://github.com/UNICT-DMI/faq-dmi-bot"
+readme = "README.md"
+rust-version = "1.65" # Start of with the same MSRV as teloxide, can be bumped if necessary
+authors = ["Federico Maria Morrone <contact@morrone.dev>"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[profile.release]
+lto = true # Enable full link time optimization
+codegen-units = 1 # Reduces the number of parallel jobs
+strip = true # Fully strip final binary
 
 [dependencies]
