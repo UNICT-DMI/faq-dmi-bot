@@ -7,11 +7,14 @@ publish = false # Avoid accidentally publishing to crates.io
 repository = "https://github.com/UNICT-DMI/faq-dmi-bot"
 readme = "README.md"
 rust-version = "1.65" # Start of with the same MSRV as teloxide, can be bumped if necessary
-authors = ["Federico Maria Morrone <contact@morrone.dev>"]
+authors = [
+    "Federico Maria Morrone <contact@morrone.dev>",
+    "Ale <alecake@ale.pet>",
+]
 
 [profile.release]
-lto = true # Enable full link time optimization
+lto = true        # Enable full link time optimization
 codegen-units = 1 # Reduces the number of parallel jobs
-strip = true # Fully strip final binary
+strip = true      # Fully strip final binary
 
 [dependencies]
